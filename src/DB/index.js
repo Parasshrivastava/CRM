@@ -4,13 +4,13 @@ import {DATABASE} from "../constants.js"
  const connectDb = async ()=>{
     try{
         const connectionInstance= await mongoose.connect(`${process.env.MONGODB_URI}/${DATABASE}`)
-        console.log(connectionInstance);
+        // console.log(connectionInstance);
         
-        console.log(`\n MONOGODB Connected !! DB HOST${connectionInstance.connection.host}`);
+        console.log(`\n DB Connected !! DB HOST${connectionInstance.connection.host}`);
     }
     catch(error)
     {
-        console.log("MONOGODB Connection Error",error);
+        console.log("DB Connection Error",error);
         process.exit(1)
         
     }
